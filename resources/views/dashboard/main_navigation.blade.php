@@ -11,11 +11,11 @@
 			<ul class="nav">
 
 				<!-- Main Navigation: Dashboard -->
-				<li class="active"><a href="index-2.html"><i class="icon-align-justify"></i> Dashboard</a></li>
+				<li class="active"><a href="{{url('/')}}"><i class="icon-align-justify"></i> Dashboard</a></li>
 				<!-- / Main Navigation: Dashboard -->
 
 				<!-- Main Navigation: General -->
-				<li class="dropdown">
+				{{-- <li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="icon-th"></i> General <b class="caret"></b>
 						</a>
@@ -66,7 +66,7 @@
 				<!-- / Main Navigation: Components -->
 
 				<!-- Main Navigation: Gallery -->
-				<li><a href="gallery.html"><i class="icon-picture"></i> Gallery</a></li>
+				<li><a href="gallery.html"><i class="icon-picture"></i> Gallery</a></li> --}}
 				<!-- / Main Navigation: Gallery -->
 
 			</ul>

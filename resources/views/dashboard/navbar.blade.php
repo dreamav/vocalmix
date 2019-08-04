@@ -21,14 +21,14 @@
 			<!-- / Mobile Menu Button -->
 
 			<!-- / Logo / Brand Name -->
-			<a class="brand" href="#"><i class="icon-leaf"></i> Avocado<b>Panel</b></a>
+			<a class="brand" href="{{ url('/') }}"><i class="icon-music"></i> Vocal<b>Mix</b></a>
 			<!-- / Logo / Brand Name -->
 
 			<!-- User Navigation -->
 			<ul class="nav pull-right">
 				
 				<!-- User Navigation: Notifications -->
-				<li class="dropdown">
+				{{-- <li class="dropdown">
 
 					<!-- User Navigation: Notifications Link -->
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -98,11 +98,11 @@
 					</ul>
 					<!-- / User Navigation: Notifications Dropdown -->
 
-				</li>
+				</li> --}}
 				<!-- / User Navigation: Notifications -->
 
 				<!-- User Navigation: Messages -->
-				<li class="dropdown">
+				{{--<li class="dropdown">
 
 					<!-- User Navigation: Messages Link -->
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -160,7 +160,7 @@
 					</ul>
 					<!-- / User Navigation: Messages Dropdown -->
 
-				</li>
+				</li>--}}
 				<!-- / User Navigation: Messages -->
 
 				<!-- User Navigation: User -->
@@ -169,17 +169,21 @@
 					<!-- User Navigation: User Link -->
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="icon-user icon-white"></i> 
-						<span class="hidden-phone">Janika</span>
+						<span class="hidden-phone">{{ Auth::user()->name }}</span>
 					</a>
 					<!-- / User Navigation: User Link -->
 
 					<!-- User Navigation: User Dropdown -->
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="icon-user"></i> Profile</a></li>
+						{{-- <li><a href="#"><i class="icon-user"></i> Profile</a></li>
 						<li><a href="#settings" data-toggle="modal"><i class="icon-cog"></i> Settings</a></li>
 						<li><a href="#messages" data-toggle="modal"><i class="icon-envelope"></i> Messages</a></li>
-						<li class="divider"></li>
-						<li><a href="#"><i class="icon-off"></i> Logout</a></li>
+						<li class="divider"></li> --}}
+						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                                     <i class="icon-off"></i> Logout
+                            </a>
+                        </li>					
 					</ul>
 					<!-- / User Navigation: User Dropdown -->
 
@@ -203,8 +207,8 @@
 
 			<!-- Top Fixed Bar: Breadcrumb Location -->
 			<ul class="pull-left">
-				<li><a href="#"><i class="icon-home"></i> Home</a> <span class="divider">/</span></li>
-				<li class="active"><a href="#"><i class="icon-align-justify"></i> Dashboard</a></li>
+				<li><a href="{{ url('/') }}"><i class="icon-home"></i> Home</a> <span class="divider">/</span></li>
+				{{-- <li class="active"><a href="#"><i class="icon-align-justify"></i> Dashboard</a></li> --}}
 			</ul>
 			<!-- / Top Fixed Bar: Breadcrumb Location -->
 
@@ -212,7 +216,7 @@
 			<ul class="pull-right">
 
 				<!-- Top Fixed Bar: Breadcrumb Theme -->
-				<li class="dropdown">
+				{{-- <li class="dropdown">
 					<!-- Top Fixed Bar: Breadcrumb Theme Link -->
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> Theme</a>
 
@@ -226,10 +230,20 @@
 					</ul>
 					<!-- / Top Fixed Bar: Breadcrumb Theme Dropdown -->
 
-				</li>
+				</li> --}}
 				<!-- / Top Fixed Bar: Breadcrumb Theme -->
 
-				<li><a href="login.html"><i class="icon-off"></i> Logout</a></li>
+				<li>
+					<a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+						
+						<i class="icon-off"></i>
+						Logout
+					</a>
+				</li>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>					
 			</ul>
 			<!-- / Top Fixed Bar: Breadcrumb Right Navigation -->
 
