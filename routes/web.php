@@ -12,6 +12,7 @@
 */
 
 Route::group([], function () {
+	Route::get('/', 'HomeController@index');
     Route::auth();
 });
 
