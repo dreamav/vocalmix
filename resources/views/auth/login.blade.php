@@ -33,9 +33,10 @@
 				</div>
 			</div>
 
-		<div class="padding">
-			<button class="btn btn-primary" type="submit">Sign in</button>
-			<a class="btn" type="submit" href="{{ url('/password/reset') }}">Forgot Password</a>
+			<div class="padding">
+				<button class="btn btn-primary" type="submit">Sign in</button>
+				<a class="btn" href="{{ url('/password/reset') }}">Forgot Password</a>
+				<a class="btn" href="{{ url('/register') }}">Register</a>
 			</div>
 		</div>
 	</form>
