@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Gate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+		if(Gate::denies('view-admin')){
+			$data = ['message'=>Auth::user()->name.' у вас нет доступа к этому разделу'];
+		}else{
+			$data = [];
+		}
+
+        return view('dashboard.index', $data);
     }
 }
