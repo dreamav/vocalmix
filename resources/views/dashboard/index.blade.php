@@ -1,0 +1,26 @@
+@extends("layouts.dashboard")
+
+@section("navbar")
+	@include("dashboard.navbar")
+@endsection
+@section("module_settings")
+	@include("dashboard.module_settings")
+@endsection
+@section("module_messages")
+	@include("dashboard.module_messages")
+@endsection
+@section("module_newmessages")
+	@include("dashboard.module_newmessages")
+@endsection
+@section("main_navigation")
+	@include("dashboard.main_navigation")
+@endsection
+@section("alert")
+	@include("dashboard.alert")
+@endsection
+@section("content")
+	@include("dashboard.content")
+@endsection
+@section("footer")
+	@include("dashboard.footer")
+@endsection
