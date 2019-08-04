@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/ls', function () {
-    return view('welcome');
+Route::group([], function () {
+    Route::auth();
 });
+
+
+Route::group(["prefix"=>"admin","middleware"=>"auth"],function (){
+
+	Route::get('/', function(){
+
+	});
+
+
+
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
